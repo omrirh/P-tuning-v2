@@ -15,8 +15,7 @@ RUN mkdir -p ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts
 # Install Python dependencies (PyTorch and Transformers)
 RUN pip3 install torch transformers
 
-# Clone the P-tuning v2 repo and set the working directory
-RUN git clone git@github.com:omrirh/P-tuning-v2.git
+# set the working directory
 WORKDIR /P-tuning-v2
 
 # Install additional Python dependencies from requirements.txt
