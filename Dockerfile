@@ -9,6 +9,9 @@ RUN apt-get update && apt-get install -y \
     python3-dev \
     curl
 
+# Add github ssh key to environment
+RUN mkdir -p ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts
+
 # Install Python dependencies (PyTorch and Transformers)
 RUN pip3 install torch transformers
 
