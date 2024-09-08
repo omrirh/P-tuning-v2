@@ -1,5 +1,5 @@
 # Base image with CUDA support
-FROM nvidia/cuda:11.3.0-cudnn8-runtime-ubuntu20.04
+FROM nvidia/cuda:11.3.1-cudnn8-runtime-ubuntu20.04
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
