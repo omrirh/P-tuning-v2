@@ -2,7 +2,7 @@
 FROM nvidia/cuda:11.3.1-cudnn8-runtime-ubuntu20.04
 
 # Install system dependencies
-RUN apt-get update && apt-get install -y \
+RUN dnf update && dnf install -y \
     git \
     python3 \
     python3-pip \
