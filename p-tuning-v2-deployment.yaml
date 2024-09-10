@@ -16,11 +16,19 @@ spec:
       containers:
       - name: p-tuning-v2
         image: quay.io/obarhaim/p-tuning-v2:latest
-#  TODO: find how to enable GPUs when running P-tuning v2 correctly.
-#        resources:
-#          limits:
-#            nvidia.com/gpu: 1
-#          requests:
-#            nvidia.com/gpu: 1
-      imagePullSecrets:
-      - name: quay-secret
+        env:
+          - name: HF_HOME
+            value: /tmp/.cache  # Redirect Hugging Face cache directory
+        ports:
+        - containerPort: 8080
+        securityContext:
+          runAsUser: 1001050000  # Use a UID in the allowed range
+          fsGroup: 1001050000
+        resources:
+          requests:
+            memory: "6Gi"
+            cpu: "2"
+          limits:
+            memory: "12Gi"
+            cpu: "4"
+      restartPolicy: Always
