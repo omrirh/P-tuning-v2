@@ -15,5 +15,7 @@ COPY . .
 
 RUN pip3 install -r requirements.txt
 
+RUN chmod +x run_script/run_rte_roberta.sh
+
 # Run the training script (ensure it runs in a shell)
 CMD ["/bin/bash", "-c", "${RUN_SCRIPT:-run_script/run_rte_roberta.sh}"]

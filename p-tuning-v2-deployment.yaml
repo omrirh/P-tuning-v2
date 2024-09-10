@@ -16,8 +16,11 @@ spec:
       containers:
       - name: p-tuning-v2
         image: quay.io/obarhaim/p-tuning-v2:latest
-        resources:
-          limits:
-            nvidia.com/gpu: 1
-          requests:
-            nvidia.com/gpu: 1
+#  TODO: find how to enable GPUs when running P-tuning v2 correctly.
+#        resources:
+#          limits:
+#            nvidia.com/gpu: 1
+#          requests:
+#            nvidia.com/gpu: 1
+      imagePullSecrets:
+      - name: quay-secret
