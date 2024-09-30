@@ -1,6 +1,6 @@
 export TASK_NAME=superglue
 export DATASET_NAME=copa
-export CUDA_VISIBLE_DEVICES=8
+export CUDA_VISIBLE_DEVICES=0
 
 
 for lr in 5e-3 7e-3 1e-2 
