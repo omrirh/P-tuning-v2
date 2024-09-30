@@ -138,10 +138,10 @@ if __name__ == '__main__':
     if training_args.do_train:
         train(trainer, training_args.resume_from_checkpoint, last_checkpoint)
     
-    # if training_args.do_eval:
-    #     evaluate(trainer)
+    if training_args.do_eval:
+        evaluate(trainer)
 
-    # if training_args.do_predict:
-    #     predict(trainer, predict_dataset)
+    if training_args.do_predict:
+        predict(trainer, predict_dataset)
 
    
