@@ -15,6 +15,7 @@ do
         --dataset_name $DATASET_NAME \
         --do_train \
         --do_eval \
+        --do_predict \
         --max_seq_length 128 \
         --per_device_train_batch_size 16 \
         --learning_rate $lr \

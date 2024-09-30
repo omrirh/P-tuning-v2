@@ -118,7 +118,9 @@ if __name__ == '__main__':
 
     set_seed(training_args.seed)
 
+    print("Setting trainer...")
     trainer, predict_dataset = get_trainer(args)
+    print("Trainer set successfully")
 
     last_checkpoint = None
     if os.path.isdir(training_args.output_dir) and training_args.do_train and not training_args.overwrite_output_dir:
@@ -134,14 +136,16 @@ if __name__ == '__main__':
                 "the `--output_dir` or add `--overwrite_output_dir` to train from scratch."
             )
 
-
     if training_args.do_train:
+        print("Start training")
         train(trainer, training_args.resume_from_checkpoint, last_checkpoint)
-    
+
     if training_args.do_eval:
+        print("Start evaluate")
         evaluate(trainer)
 
     if training_args.do_predict:
+        print("Start predict")
         predict(trainer, predict_dataset)
 
    
